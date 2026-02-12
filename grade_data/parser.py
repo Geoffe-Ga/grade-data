@@ -12,7 +12,7 @@ import json
 import logging
 import re
 from dataclasses import dataclass
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import TYPE_CHECKING
 
@@ -37,7 +37,7 @@ _NOT_YET_GRADED_RE = re.compile(
     re.MULTILINE,
 )
 
-_SENDER = "pwsupport@unionsd.org"
+_SUBJECT = "Progress Report From Dartmouth Middle School"
 _IMAP_HOST = "imap.gmail.com"
 
 
@@ -277,17 +277,23 @@ def fetch_emails(
     Returns:
         GradeReport assembled from parsed emails.
     """
-    since_date = datetime.now(UTC).strftime("%d-%b-%Y")
+    since = datetime.now(UTC) - timedelta(days=days_back)
+    since_date = since.strftime("%d-%b-%Y")
 
     conn = imaplib.IMAP4_SSL(_IMAP_HOST)
     conn.login(gmail_address, gmail_password)
     conn.select("INBOX")
 
-    search_criteria = f'(FROM "{_SENDER}" SINCE "{since_date}")'
+    search_criteria = f'(SUBJECT "{_SUBJECT}" SINCE "{since_date}")'
     _status, msg_ids = conn.search(None, search_criteria)
 
     uid_list = msg_ids[0].split() if msg_ids[0] else []
-    logger.info("Found %d emails from %s", len(uid_list), _SENDER)
+    logger.info(
+        "Found %d emails matching subject '%s' since %s",
+        len(uid_list),
+        _SUBJECT,
+        since_date,
+    )
 
     parsed_courses: dict[str, ParsedEmail] = {}
     student = ""

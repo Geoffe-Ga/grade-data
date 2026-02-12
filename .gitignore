@@ -26,6 +26,5 @@ htmlcov/
 # OS
 .DS_Store
 
-# Generated data (runtime artifacts)
-grades.json
-state.json
+# Local-only artifacts (not needed in repo)
+
