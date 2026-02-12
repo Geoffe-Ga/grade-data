@@ -1,6 +1,56 @@
 {
-  "last_updated": "2026-02-12T02:26:44.599523+00:00",
+  "last_updated": "2026-02-12T02:41:26.363337+00:00",
   "student": "",
   "grading_period": "",
-  "courses": []
+  "courses": [
+    {
+      "name": "Math 6",
+      "period": "P1(A)",
+      "instructor": "Motch, Michaela",
+      "overall_grade": "D-",
+      "assignments": []
+    },
+    {
+      "name": "",
+      "period": "",
+      "instructor": "",
+      "overall_grade": "",
+      "assignments": []
+    },
+    {
+      "name": "Life Skills-Creative Com",
+      "period": "P3(A)",
+      "instructor": "Livingston, Eric",
+      "overall_grade": "A",
+      "assignments": []
+    },
+    {
+      "name": "Science 6",
+      "period": "P2(A)",
+      "instructor": "Motch, Michaela",
+      "overall_grade": "C+",
+      "assignments": []
+    },
+    {
+      "name": "Language Arts  6",
+      "period": "P5(A)",
+      "instructor": "Mullaly, Megan",
+      "overall_grade": "C",
+      "assignments": []
+    },
+    {
+      "name": "PE 6",
+      "period": "P4(A)",
+      "instructor": "Larson, Jeanine",
+      "overall_grade": "A",
+      "assignments": []
+    },
+    {
+      "name": "Soc Sci 6",
+      "period": "P6(A)",
+      "instructor": "Mullaly, Megan",
+      "overall_grade": "D",
+      "assignments": []
+    }
+  ]
 }
