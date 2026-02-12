@@ -86,6 +86,22 @@
             color: var(--badge-missing);
             margin-bottom: .5rem;
         }
+        .missing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .missing-close {
+            background: none;
+            border: none;
+            color: var(--badge-missing);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0 .25rem;
+            line-height: 1;
+            opacity: .7;
+        }
+        .missing-close:hover { opacity: 1; }
         #missing-panel ul { list-style: none; padding: 0; }
         #missing-panel li {
             padding: .25rem 0;
@@ -169,7 +185,7 @@
         <header>
             <h1>Grades for Layla H.</h1>
             <p class="subtitle">Q3
-                &middot; Updated 2026-02-12T16:40:32.498766+00:00</p>
+                &middot; Updated 2026-02-12T17:48:54.650365+00:00</p>
         </header>
         <div id="missing-panel"></div>
         <div id="course-cards"></div>
@@ -178,7 +194,7 @@
     <script>
         const PASSWORD_HASH = "beac631c9f939d77cec5e8ed6eca16198a47bef17c3af463d1dd2fb7e86b747e";
         const GRADE_DATA = {
-  "last_updated": "2026-02-12T16:40:32.498766+00:00",
+  "last_updated": "2026-02-12T17:48:54.650365+00:00",
   "student": "Layla H.",
   "grading_period": "Q3",
   "courses": [
@@ -1285,8 +1301,13 @@
                 });
             });
             const mp = document.getElementById('missing-panel');
-            if (missing.length) {
-                mp.innerHTML = '<h2>Missing Assignments</h2><ul>' +
+            if (missing.length &&
+                !sessionStorage.getItem('missing-dismissed')) {
+                mp.innerHTML =
+                    '<div class="missing-header">' +
+                    '<h2>Missing Assignments</h2>' +
+                    '<button class="missing-close" onclick="dismissMissing()"' +
+                    ' title="Dismiss">&times;</button></div><ul>' +
                     missing.map(m =>
                         `<li><strong>${m.course}</strong>: ${m.name} (${m.date})</li>`
                     ).join('') + '</ul>';
@@ -1323,6 +1344,10 @@
                     `<th>Score</th><th>Status</th></tr>` +
                     rows + `</table></div></div>`;
             }).join('');
+        }
+        function dismissMissing() {
+            sessionStorage.setItem('missing-dismissed', '1');
+            document.getElementById('missing-panel').innerHTML = '';
         }
         function toggleCourse(i) {
             const body = document.querySelector(`#course-${i} .course-body`);
