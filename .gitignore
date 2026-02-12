@@ -29,4 +29,3 @@ htmlcov/
 # Generated data (runtime artifacts)
 grades.json
 state.json
-docs/index.html
