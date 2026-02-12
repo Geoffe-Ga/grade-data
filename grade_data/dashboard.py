@@ -33,7 +33,7 @@ def build_dashboard(
     """
     grade_json = json.dumps(grade_report.to_dict(), indent=2)
 
-    html = _build_html(grade_report, password_hash, grade_json)
+    html = _build_html(grade_report, password_hash.strip(), grade_json)
 
     path = Path(output_path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -253,12 +253,16 @@ _JS = """\
             ).then(buf => {
                 const hash = Array.from(new Uint8Array(buf))
                     .map(b => b.toString(16).padStart(2, '0')).join('');
-                if (hash === PASSWORD_HASH) {
+                if (hash === PASSWORD_HASH.trim()) {
                     sessionStorage.setItem('authed', '1');
                     showDashboard();
                 } else {
                     document.getElementById('login-error').hidden = false;
                 }
+            }).catch(() => {
+                document.getElementById('login-error').textContent =
+                    'Unlock requires HTTPS.';
+                document.getElementById('login-error').hidden = false;
             });
         }
         document.addEventListener('DOMContentLoaded', () => {
@@ -295,6 +299,12 @@ _JS = """\
         }
         function renderDashboard() {
             const d = GRADE_DATA;
+            if (!d.courses.length) {
+                document.getElementById('course-cards').innerHTML =
+                    '<p style="text-align:center;color:var(--text-muted);' +
+                    'padding:2rem">No grade data available yet.</p>';
+                return;
+            }
             // Missing panel
             const missing = [];
             d.courses.forEach(c => {
