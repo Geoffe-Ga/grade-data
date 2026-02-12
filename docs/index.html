@@ -168,7 +168,7 @@
         <header>
             <h1>Grades for </h1>
             <p class="subtitle">
-                &middot; Updated 2026-02-12T02:41:26.363337+00:00</p>
+                &middot; Updated 2026-02-12T03:08:07.621710+00:00</p>
         </header>
         <div id="missing-panel"></div>
         <div id="course-cards"></div>
@@ -177,7 +177,7 @@
     <script>
         const PASSWORD_HASH = "beac631c9f939d77cec5e8ed6eca16198a47bef17c3af463d1dd2fb7e86b747e";
         const GRADE_DATA = {
-  "last_updated": "2026-02-12T02:41:26.363337+00:00",
+  "last_updated": "2026-02-12T03:08:07.621710+00:00",
   "student": "",
   "grading_period": "",
   "courses": [
@@ -240,12 +240,16 @@
             ).then(buf => {
                 const hash = Array.from(new Uint8Array(buf))
                     .map(b => b.toString(16).padStart(2, '0')).join('');
-                if (hash === PASSWORD_HASH) {
+                if (hash === PASSWORD_HASH.trim()) {
                     sessionStorage.setItem('authed', '1');
                     showDashboard();
                 } else {
                     document.getElementById('login-error').hidden = false;
                 }
+            }).catch(() => {
+                document.getElementById('login-error').textContent =
+                    'Unlock requires HTTPS.';
+                document.getElementById('login-error').hidden = false;
             });
         }
         document.addEventListener('DOMContentLoaded', () => {
@@ -282,6 +286,12 @@
         }
         function renderDashboard() {
             const d = GRADE_DATA;
+            if (!d.courses.length) {
+                document.getElementById('course-cards').innerHTML =
+                    '<p style="text-align:center;color:var(--text-muted);' +
+                    'padding:2rem">No grade data available yet.</p>';
+                return;
+            }
             // Missing panel
             const missing = [];
             d.courses.forEach(c => {
