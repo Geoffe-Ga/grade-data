@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# scripts/format.sh - Format code with Black and isort
+# scripts/format.sh - Format code with Ruff
 # Usage: ./scripts/format.sh [--fix] [--check] [--verbose] [--help]
 
 set -euo pipefail
@@ -30,7 +30,7 @@ while [[ $# -gt 0 ]]; do
             cat << EOF
 Usage: $(basename "$0") [OPTIONS]
 
-Format code using Black and isort.
+Format code using Ruff formatter.
 
 OPTIONS:
     --fix       Apply formatting changes (default)
@@ -64,30 +64,19 @@ if $VERBOSE; then
     set -x
 fi
 
-echo "=== Formatting (Black + isort) ==="
+echo "=== Formatting (Ruff) ==="
 
-# Determine mode
 if $CHECK; then
-    MODE="--check"
-else
-    MODE=""
-fi
-
-# Run isort
-if $VERBOSE; then
-    echo "Running isort..."
-fi
-isort $MODE . || { echo "✗ isort failed" >&2; exit 1; }
-
-# Run Black
-if $VERBOSE; then
-    echo "Running Black..."
-fi
-black $MODE . || { echo "✗ Black failed" >&2; exit 1; }
-
-if [ -n "$MODE" ]; then
+    if $VERBOSE; then
+        echo "Checking formatting..."
+    fi
+    ruff format --check . || { echo "✗ Formatting check failed" >&2; exit 1; }
     echo "✓ Code formatting check passed"
 else
+    if $VERBOSE; then
+        echo "Applying formatting..."
+    fi
+    ruff format . || { echo "✗ Formatting failed" >&2; exit 1; }
     echo "✓ Code formatted successfully"
 fi
 exit 0

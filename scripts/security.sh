@@ -64,7 +64,7 @@ echo "=== Security Checks (Bandit) ==="
 if $VERBOSE; then
     echo "Running Bandit security scanner..."
 fi
-bandit -r start_green_stay_green/ || { echo "✗ Bandit found issues" >&2; exit 1; }
+bandit -r grade_data/ || { echo "✗ Bandit found issues" >&2; exit 1; }
 
 echo "=== Security Checks (Safety) ==="
 
