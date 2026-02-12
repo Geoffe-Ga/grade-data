@@ -128,6 +128,7 @@ _CSS = """\
             justify-content: center;
             min-height: 100vh;
         }
+        #login-screen[hidden] { display: none; }
         .login-box {
             text-align: center;
             background: var(--surface);
@@ -177,6 +178,22 @@ _CSS = """\
             color: var(--badge-missing);
             margin-bottom: .5rem;
         }
+        .missing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .missing-close {
+            background: none;
+            border: none;
+            color: var(--badge-missing);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0 .25rem;
+            line-height: 1;
+            opacity: .7;
+        }
+        .missing-close:hover { opacity: 1; }
         #missing-panel ul { list-style: none; padding: 0; }
         #missing-panel li {
             padding: .25rem 0;
@@ -283,7 +300,7 @@ _JS = """\
             const map = {A:'var(--grade-a)',B:'var(--grade-b)',
                          C:'var(--grade-c)',D:'var(--grade-d)',
                          F:'var(--grade-f)'};
-            return map[letter] || 'var(--text)';
+            return map[letter && letter[0]] || 'var(--text)';
         }
         function statusBadge(a) {
             const b = '<span class="badge badge-';
@@ -297,8 +314,21 @@ _JS = """\
                 return b+'not-graded">Not Graded</span>';
             return '';
         }
+        function formatDate(iso) {
+            const d = new Date(iso);
+            return d.toLocaleDateString('en-US', {
+                month: 'short', day: 'numeric', year: 'numeric',
+                hour: 'numeric', minute: '2-digit'
+            });
+        }
         function renderDashboard() {
             const d = GRADE_DATA;
+            // Format the updated date in the subtitle
+            const sub = document.querySelector('.subtitle');
+            if (sub && d.last_updated) {
+                sub.textContent = (d.grading_period || '') +
+                    ' \u00b7 Updated ' + formatDate(d.last_updated);
+            }
             if (!d.courses.length) {
                 document.getElementById('course-cards').innerHTML =
                     '<p style="text-align:center;color:var(--text-muted);' +
@@ -313,8 +343,13 @@ _JS = """\
                 });
             });
             const mp = document.getElementById('missing-panel');
-            if (missing.length) {
-                mp.innerHTML = '<h2>Missing Assignments</h2><ul>' +
+            if (missing.length &&
+                !sessionStorage.getItem('missing-dismissed')) {
+                mp.innerHTML =
+                    '<div class="missing-header">' +
+                    '<h2>Missing Assignments</h2>' +
+                    '<button class="missing-close" onclick="dismissMissing()"' +
+                    ' title="Dismiss">&times;</button></div><ul>' +
                     missing.map(m =>
                         `<li><strong>${m.course}</strong>: ${m.name} (${m.date})</li>`
                     ).join('') + '</ul>';
@@ -351,6 +386,10 @@ _JS = """\
                     `<th>Score</th><th>Status</th></tr>` +
                     rows + `</table></div></div>`;
             }).join('');
+        }
+        function dismissMissing() {
+            sessionStorage.setItem('missing-dismissed', '1');
+            document.getElementById('missing-panel').innerHTML = '';
         }
         function toggleCourse(i) {
             const body = document.querySelector(`#course-${i} .course-body`);

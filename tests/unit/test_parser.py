@@ -612,3 +612,172 @@ class TestImapFolderSelection:
 
         mock_conn.select.assert_called_once_with('"[Gmail]/All Mail"')
         assert len(report.courses) == 1
+
+
+# ---------------------------------------------------------------------------
+# RCA-002 Regression: CRLF line endings from IMAP break assignment parsing
+# ---------------------------------------------------------------------------
+
+
+class TestCrlfLineEndings:
+    """Regression tests for CRLF line endings returned by IMAP.
+
+    IMAP servers return email bodies with \\r\\n line endings. Python
+    re.MULTILINE $ matches before \\n but \\r sits between the closing
+    paren and $ position, causing assignment regex to fail.
+    """
+
+    @pytest.fixture()
+    def crlf_email_text(self, sample_email_text) -> str:
+        """Convert the sample fixture to CRLF line endings like IMAP returns."""
+        return sample_email_text.replace("\n", "\r\n")
+
+    def test_parses_assignments_from_crlf_body(self, crlf_email_text) -> None:
+        """Test that CRLF bodies parse the same assignments as LF bodies."""
+        result = parse_email_body(crlf_email_text)
+        assert len(result.course.assignments) == 10
+
+    def test_parses_headers_from_crlf_body(self, crlf_email_text) -> None:
+        """Test that course headers are parsed correctly from CRLF body."""
+        result = parse_email_body(crlf_email_text)
+        assert result.student == "Layla H."
+        assert result.grading_period == "Q3"
+        assert result.course.name == "Math 6"
+        assert result.course.overall_grade == "D"
+
+    def test_parses_missing_assignments_from_crlf_body(self, crlf_email_text) -> None:
+        """Test that missing assignments are detected in CRLF body."""
+        result = parse_email_body(crlf_email_text)
+        missing = [a for a in result.course.assignments if a.is_missing]
+        assert len(missing) == 2
+
+    def test_parses_exempt_from_crlf_body(self, crlf_email_text) -> None:
+        """Test that exempt assignments are detected in CRLF body."""
+        result = parse_email_body(crlf_email_text)
+        exempt = [a for a in result.course.assignments if a.is_exempt]
+        assert len(exempt) == 1
+
+    def test_parses_not_yet_graded_from_crlf_body(self, crlf_email_text) -> None:
+        """Test that not-yet-graded assignments are detected in CRLF body."""
+        result = parse_email_body(crlf_email_text)
+        nyg = [a for a in result.course.assignments if a.is_not_yet_graded]
+        assert len(nyg) == 1
+
+    @patch("grade_data.parser.imaplib.IMAP4_SSL")
+    def test_fetch_parses_crlf_imap_email(
+        self, mock_imap_class, sample_email_text
+    ) -> None:
+        """End-to-end: IMAP email with CRLF produces correct assignments."""
+        # Build a raw email where the body has CRLF (as IMAP delivers)
+        crlf_body = sample_email_text.replace("\n", "\r\n")
+        raw = (
+            "From: pwsupport@unionsd.org\r\n"
+            "Subject: Progress report for Layla H.\r\n"
+            "Content-Type: text/plain; charset=utf-8\r\n"
+            "\r\n" + crlf_body
+        ).encode("utf-8")
+
+        mock_conn = MagicMock()
+        mock_conn.login.return_value = ("OK", [b"Logged in"])
+        mock_conn.select.return_value = ("OK", [b"1"])
+        mock_conn.search.return_value = ("OK", [b"1"])
+        mock_conn.fetch.return_value = (
+            "OK",
+            [(b"1 (RFC822 {%d})" % len(raw), raw)],
+        )
+        mock_imap_class.return_value = mock_conn
+
+        report = fetch_emails("fake@example.invalid", "fake-pass")
+
+        assert len(report.courses) == 1
+        assert len(report.courses[0].assignments) == 10
+
+
+# ---------------------------------------------------------------------------
+# RCA-003 Regression: Empty student/course from bad emails
+# ---------------------------------------------------------------------------
+
+
+class TestEmptyEmailHandling:
+    """Regression tests for emails with unparseable content.
+
+    When the last email in the batch has empty student/course data,
+    it overwrites previously parsed values with empty strings.
+    """
+
+    @patch("grade_data.parser.imaplib.IMAP4_SSL")
+    def test_empty_course_name_filtered_out(
+        self, mock_imap_class, sample_email_text
+    ) -> None:
+        """Test that emails producing empty course names are excluded."""
+        good_raw = (
+            "From: pwsupport@unionsd.org\r\n"
+            "Subject: Progress report for Layla H.\r\n"
+            "Content-Type: text/plain; charset=utf-8\r\n"
+            "\r\n" + sample_email_text
+        ).encode("utf-8")
+        bad_raw = (
+            b"From: pwsupport@unionsd.org\r\n"
+            b"Subject: Some notification\r\n"
+            b"Content-Type: text/plain; charset=utf-8\r\n"
+            b"\r\n"
+            b"This is not a grade report.\r\n"
+        )
+
+        mock_conn = MagicMock()
+        mock_conn.login.return_value = ("OK", [b"Logged in"])
+        mock_conn.select.return_value = ("OK", [b"1"])
+        uids = b"1 2"
+        mock_conn.search.return_value = ("OK", [uids])
+
+        def fake_fetch(uid, parts):
+            idx = int(uid) - 1
+            bodies = [good_raw, bad_raw]
+            return ("OK", [(b"1 (RFC822 {0})", bodies[idx])])
+
+        mock_conn.fetch.side_effect = fake_fetch
+        mock_imap_class.return_value = mock_conn
+
+        report = fetch_emails("fake@example.invalid", "fake-pass")
+
+        # Only the valid course should appear
+        assert len(report.courses) == 1
+        assert report.courses[0].name == "Math 6"
+
+    @patch("grade_data.parser.imaplib.IMAP4_SSL")
+    def test_student_name_not_overwritten_by_bad_email(
+        self, mock_imap_class, sample_email_text
+    ) -> None:
+        """Test that a bad email doesn't overwrite student name with empty."""
+        good_raw = (
+            "From: pwsupport@unionsd.org\r\n"
+            "Subject: Progress report for Layla H.\r\n"
+            "Content-Type: text/plain; charset=utf-8\r\n"
+            "\r\n" + sample_email_text
+        ).encode("utf-8")
+        bad_raw = (
+            b"From: pwsupport@unionsd.org\r\n"
+            b"Subject: Some notification\r\n"
+            b"Content-Type: text/plain; charset=utf-8\r\n"
+            b"\r\n"
+            b"No grade data here.\r\n"
+        )
+
+        mock_conn = MagicMock()
+        mock_conn.login.return_value = ("OK", [b"Logged in"])
+        mock_conn.select.return_value = ("OK", [b"1"])
+        uids = b"1 2"
+        mock_conn.search.return_value = ("OK", [uids])
+
+        def fake_fetch(uid, parts):
+            idx = int(uid) - 1
+            bodies = [good_raw, bad_raw]
+            return ("OK", [(b"1 (RFC822 {0})", bodies[idx])])
+
+        mock_conn.fetch.side_effect = fake_fetch
+        mock_imap_class.return_value = mock_conn
+
+        report = fetch_emails("fake@example.invalid", "fake-pass")
+
+        assert report.student == "Layla H."
+        assert report.grading_period == "Q3"

@@ -207,12 +207,16 @@ def _parse_assignments(body: str) -> list[Assignment]:
 def parse_email_body(body: str) -> ParsedEmail:
     """Parse a single PowerSchool grade report email body.
 
+    Normalizes CRLF line endings to LF before parsing, since IMAP
+    delivers emails with ``\\r\\n`` which breaks regex ``$`` anchors.
+
     Args:
         body: The plain text body of the email.
 
     Returns:
         ParsedEmail containing student info and course data.
     """
+    body = body.replace("\r\n", "\n")
     student = _parse_header(body, "Student")
     grading_period = _parse_header(body, "Grading period")
     course_name = _parse_header(body, "Course")
@@ -251,7 +255,7 @@ def _extract_plain_text(msg: Message) -> str:
                 payload = part.get_payload(decode=True)
                 if isinstance(payload, bytes):
                     charset = part.get_content_charset() or "utf-8"
-                    return payload.decode(charset)
+                    return payload.decode(charset).replace("\r\n", "\n")
         return ""
 
     if msg.get_content_type() != "text/plain":
@@ -259,7 +263,7 @@ def _extract_plain_text(msg: Message) -> str:
     payload = msg.get_payload(decode=True)
     if isinstance(payload, bytes):
         charset = msg.get_content_charset() or "utf-8"
-        return payload.decode(charset)
+        return payload.decode(charset).replace("\r\n", "\n")
     return ""
 
 
@@ -322,8 +326,16 @@ def fetch_emails(
             continue
 
         parsed = parse_email_body(body)
-        student = parsed.student
-        grading_period = parsed.grading_period
+
+        # Skip non-grade emails (empty course name)
+        if not parsed.course.name:
+            logger.debug("Skipping email with empty course name")
+            continue
+
+        if parsed.student:
+            student = parsed.student
+        if parsed.grading_period:
+            grading_period = parsed.grading_period
         # Dedup by course name — last one wins (most recent)
         parsed_courses[parsed.course.name] = parsed
 

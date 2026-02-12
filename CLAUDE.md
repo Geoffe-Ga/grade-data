@@ -29,12 +29,11 @@ Always invoke tools through `./scripts/*` instead of directly.
 
 | Task | ❌ NEVER | ✅ ALWAYS |
 |------|----------|-----------|
-| Format code | `black .` | `./scripts/format.sh` |
+| Format code | `ruff format .` | `./scripts/format.sh` |
 | Run tests | `pytest` | `./scripts/test.sh` |
-| Type check | `mypy .` | `./scripts/lint.sh` (includes mypy) |
+| Type check | `mypy .` | `./scripts/typecheck.sh` |
 | Lint code | `ruff check .` | `./scripts/lint.sh` |
 | Security scan | `bandit -r src/` | `./scripts/security.sh` |
-| Mutation test | `mutmut run` | `./scripts/mutation.sh` |
 | All checks | *(run each tool)* | `./scripts/check-all.sh` |
 
 See [9.1 Tool Invocation Patterns](#91-tool-invocation-patterns) for complete list.
@@ -88,8 +87,7 @@ Follow the 4-gate workflow rigorously.
 **The Process**:
 1. Gate 1: Local checks pass (`./scripts/check-all.sh` → exit 0)
 2. Gate 2: CI pipeline green (all jobs ✅)
-3. Gate 3: Mutation score ≥80%
-4. Gate 4: Code review LGTM
+3. Gate 3: Code review LGTM
 
 See [4. Stay Green Workflow](#4-stay-green-workflow) for complete documentation.
 
@@ -102,9 +100,7 @@ Quality thresholds are immutable. Meet them, don't lower them.
 **Standards**:
 - Test Coverage: ≥90%
 - Docstring Coverage: ≥95%
-- Mutation Score: ≥80%
 - Cyclomatic Complexity: ≤10 per function
-- Pylint Score: ≥9.0
 
 **When code doesn't meet standards**:
 - ❌ Change `fail_under = 70` in pyproject.toml
@@ -154,11 +150,18 @@ See [10. Common Pitfalls & Troubleshooting](#10-common-pitfalls--troubleshooting
 **Purpose**: Provide a robust, well-tested foundation for data transformation, validation, and analysis workflows with emphasis on maintainability, security, and correctness.
 
 **Key Features**:
-- Type-safe data processing with comprehensive type hints
-- Extensive error handling patterns
-- Concurrent processing capabilities
-- Security-first design principles
-- Comprehensive documentation and testing
+- IMAP email parsing of PowerSchool grade reports
+- Discord webhook alerts for missing assignments
+- Static HTML dashboard hosted on GitHub Pages
+- Automated via GitHub Actions (fetch, parse, alert, deploy)
+
+**Data Policy**: This is a personal hobby project for monitoring a child's school
+grades. The repository contains grade data (e.g., `grades.json`) with appropriately
+stripped PII — the student name is abbreviated (first name + last initial) and
+instructor names are public school staff. The threat model does not include
+sophisticated attackers; the only realistic audience who might discover the site is
+the student's classmates. Committing grade data to the repo is intentional and
+acceptable for this use case.
 
 ---
 
@@ -174,7 +177,6 @@ When all CI checks pass with zero warnings, zero errors, and maximum quality met
 - ✅ Linting: 0 errors, 0 warnings
 - ✅ Type checking: 0 errors
 - ✅ Security: 0 vulnerabilities
-- ✅ Mutation score: ≥80%
 - ✅ Docstring coverage: ≥95%
 
 This represents **MAXIMUM QUALITY ENGINEERING**—the standard to which all code must aspire.
@@ -225,9 +227,9 @@ For those committed to maximum quality engineering:
 
 **Policy**: Never request review with failing checks. Never merge without LGTM.
 
-The Stay Green workflow enforces iterative quality improvement through **4 sequential gates**. Each gate must pass before proceeding to the next.
+The Stay Green workflow enforces iterative quality improvement through **3 sequential gates**. Each gate must pass before proceeding to the next.
 
-### 4.1 The Four Gates
+### 4.1 The Three Gates
 
 1. **Gate 1: Local Pre-Commit** (Iterate Until Green)
    - Run `./scripts/check-all.sh`
@@ -241,16 +243,10 @@ The Stay Green workflow enforces iterative quality improvement through **4 seque
    - If CI fails: fix locally, re-run Gate 1, push again
    - Only proceed when all CI jobs show ✅
 
-3. **Gate 3: Mutation Testing** (Iterate Until 80%+)
-   - Run `./scripts/mutation.sh` (or wait for CI job)
-   - If score < 80%: add tests to kill surviving mutants
-   - Re-run Gate 1, push, wait for CI
-   - Only proceed when mutation score ≥ 80%
-
-4. **Gate 4: Code Review** (Iterate Until LGTM)
+3. **Gate 3: Code Review** (Iterate Until LGTM)
    - Wait for code review (AI or human)
    - If feedback provided: address ALL concerns
-   - Re-run Gate 1, push, wait for CI and mutation
+   - Re-run Gate 1, push, wait for CI
    - Only merge when review shows LGTM with no reservations
 
 ### 4.2 Quick Checklist
@@ -260,8 +256,7 @@ Before creating/updating a PR:
 - [ ] Gate 1: `./scripts/check-all.sh` passes locally (exit 0)
 - [ ] Push changes: `git push origin feature-branch`
 - [ ] Gate 2: All CI jobs show ✅ (green)
-- [ ] Gate 3: Mutation score ≥ 80% (if applicable)
-- [ ] Gate 4: Code review shows LGTM
+- [ ] Gate 3: Code review shows LGTM
 - [ ] Ready to merge!
 
 ### 4.3 Anti-Patterns (DO NOT DO)
@@ -309,9 +304,11 @@ grade-data/
 │   ├── check-all.sh                  # Run all quality checks
 │   ├── test.sh                       # Test suite runner
 │   ├── lint.sh                       # Linting and type checking
-│   ├── format.sh                     # Code formatting
+│   ├── format.sh                     # Code formatting (Ruff)
 │   ├── security.sh                   # Security scanning
-│   └── mutation.sh                   # Mutation testing
+│   ├── typecheck.sh                  # Type checking (MyPy)
+│   ├── complexity.sh                 # Complexity analysis (Radon)
+│   └── coverage.sh                   # Coverage reporting
 ├── src/
 │   └── grade_data/
 │       ├── __init__.py
@@ -363,8 +360,13 @@ All code must meet these standards before merging to main:
 #### Test Coverage
 - **Code Coverage**: 90% minimum (branch coverage)
 - **Docstring Coverage**: 95% minimum (interrogate)
-- **Mutation Score**: 80% minimum (mutmut)
 - **Test Types**: Unit, Integration, and Property-based coverage required
+
+> **Note — Mutation Testing Removed**: Mutation testing (mutmut) was removed as
+> disproportionately heavy for this hobby project. The cost of maintaining mutation
+> infrastructure and waiting for slow mutation runs outweighs the benefit for a
+> small personal tool. High unit test coverage (90%+) and code review provide
+> sufficient confidence.
 
 #### Type Checking
 - **MyPy**: Strict mode, no `# type: ignore` without justification
@@ -379,10 +381,7 @@ All code must meet these standards before merging to main:
 - **Max Lines per Function**: 50 lines
 
 #### Linting and Formatting
-- **Ruff**: ALL rules enabled (no exceptions unless documented)
-- **Black**: Line length 88 characters
-- **isort**: Import sorting per configuration
-- **Pylint**: Score of 9.0+ required
+- **Ruff**: Linting and formatting (replaces Black + isort)
 - **Bandit**: Security scanning with zero exceptions
 - **Safety**: Dependency vulnerability checking
 

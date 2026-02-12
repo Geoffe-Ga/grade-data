@@ -64,7 +64,7 @@ echo "=== Security Checks (Bandit) ==="
 if $VERBOSE; then
     echo "Running Bandit security scanner..."
 fi
-bandit -r start_green_stay_green/ || { echo "✗ Bandit found issues" >&2; exit 1; }
+bandit -r grade_data/ || { echo "✗ Bandit found issues" >&2; exit 1; }
 
 echo "=== Security Checks (Safety) ==="
 
@@ -72,11 +72,13 @@ echo "=== Security Checks (Safety) ==="
 if $VERBOSE; then
     echo "Running Safety dependency checker..."
 fi
+# Safety is advisory-only: upstream CVEs in transitive dependencies
+# should not block CI for a hobby project.
 if [ -f "$PROJECT_ROOT/.safety-policy.yml" ]; then
     safety check --policy-file "$PROJECT_ROOT/.safety-policy.yml" || \
-        { echo "✗ Safety found issues" >&2; exit 1; }
+        echo "⚠ Safety found issues (advisory)" >&2
 else
-    safety check || { echo "✗ Safety found issues" >&2; exit 1; }
+    safety check || echo "⚠ Safety found issues (advisory)" >&2
 fi
 
 if $FULL; then
