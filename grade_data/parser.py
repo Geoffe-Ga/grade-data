@@ -37,7 +37,7 @@ _NOT_YET_GRADED_RE = re.compile(
     re.MULTILINE,
 )
 
-_SUBJECT = "Progress Report From Dartmouth Middle School"
+_SENDER = "pwsupport@unionsd.org"
 _IMAP_HOST = "imap.gmail.com"
 
 
@@ -284,30 +284,17 @@ def fetch_emails(
     conn.login(gmail_address, gmail_password)
     conn.select("INBOX")
 
-    search_criteria = f'(SUBJECT "{_SUBJECT}" SINCE "{since_date}")'
+    search_criteria = f'(FROM "{_SENDER}" SINCE "{since_date}")'
     logger.debug("IMAP search: %s", search_criteria)
     _status, msg_ids = conn.search(None, search_criteria)
 
     uid_list = msg_ids[0].split() if msg_ids[0] else []
     logger.info(
-        "Found %d emails matching subject '%s' since %s",
+        "Found %d emails from '%s' since %s",
         len(uid_list),
-        _SUBJECT,
+        _SENDER,
         since_date,
     )
-
-    # If no results, try a broader search to diagnose
-    if not uid_list:
-        broad_criteria = f'(SINCE "{since_date}")'
-        _bstatus, broad_ids = conn.search(None, broad_criteria)
-        broad_list = broad_ids[0].split() if broad_ids[0] else []
-        logger.info("Diagnostic: %d total emails since %s", len(broad_list), since_date)
-        # Log subjects of recent emails to help debug
-        for uid in broad_list[:10]:
-            _s, data = conn.fetch(uid, "(BODY[HEADER.FIELDS (SUBJECT)])")
-            raw = data[0]
-            if isinstance(raw, tuple):
-                logger.debug("  Subject: %s", raw[1].decode(errors="replace").strip())
 
     parsed_courses: dict[str, ParsedEmail] = {}
     student = ""
