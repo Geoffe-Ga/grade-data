@@ -101,7 +101,7 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          pytest -v --cov=. --cov-report=xml --cov-report=html --cov-report=term-missing --cov-branch --cov-fail-under=${{ env.MIN_COVERAGE }} --maxfail=5 --tb=short -n auto
+          pytest -v --cov=grade_data --cov-report=xml --cov-report=html --cov-report=term-missing --cov-branch --cov-fail-under=${{ env.MIN_COVERAGE }} --maxfail=5 --tb=short
         env:
           PYTHONPATH: ${{ github.workspace }}
 
