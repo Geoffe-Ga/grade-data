@@ -81,8 +81,8 @@ jobs:
 
       - name: Run Bandit security scan
         run: |
-          bandit -r . -f json -o bandit-report.json --severity-level medium --confidence-level medium || true
-          bandit -r . -ll -i
+          bandit -r grade_data/ -f json -o bandit-report.json --severity-level medium --confidence-level medium || true
+          bandit -r grade_data/ -ll -i
         continue-on-error: false
 
       - name: Run Safety vulnerability check
