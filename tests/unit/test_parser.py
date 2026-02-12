@@ -1,8 +1,9 @@
 """Tests for grade_data.parser module."""
 
+import imaplib
 import json
 from pathlib import Path
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, call, patch
 
 import pytest
 
@@ -541,3 +542,73 @@ class TestFetchEmailsEdgeCases:
         report = fetch_emails("fake@example.invalid", "fake-pass")
 
         assert report.courses == []
+
+
+# ---------------------------------------------------------------------------
+# RCA-001 Regression: IMAP folder selection
+# ---------------------------------------------------------------------------
+
+
+class TestImapFolderSelection:
+    """Regression tests for RCA-001: emails not found because INBOX was searched
+    instead of [Gmail]/All Mail where archived/filtered emails reside."""
+
+    @patch("grade_data.parser.imaplib.IMAP4_SSL")
+    def test_fetch_selects_all_mail_not_inbox(self, mock_imap_class) -> None:
+        """Test that fetch_emails searches [Gmail]/All Mail, not INBOX."""
+        mock_conn = MagicMock()
+        mock_conn.login.return_value = ("OK", [b"Logged in"])
+        mock_conn.select.return_value = ("OK", [b"1"])
+        mock_conn.search.return_value = ("OK", [b""])
+        mock_imap_class.return_value = mock_conn
+
+        fetch_emails("fake@example.invalid", "fake-pass")
+
+        # The first select call must target All Mail
+        first_select_call = mock_conn.select.call_args_list[0]
+        assert first_select_call == call('"[Gmail]/All Mail"')
+
+    @patch("grade_data.parser.imaplib.IMAP4_SSL")
+    def test_fetch_falls_back_to_inbox(self, mock_imap_class) -> None:
+        """Test fallback to INBOX when [Gmail]/All Mail is unavailable."""
+        mock_conn = MagicMock()
+        mock_conn.login.return_value = ("OK", [b"Logged in"])
+        # First select ([Gmail]/All Mail) fails, second (INBOX) succeeds
+        mock_conn.select.side_effect = [
+            imaplib.IMAP4.error("NO [Gmail]/All Mail does not exist"),
+            ("OK", [b"1"]),
+        ]
+        mock_conn.search.return_value = ("OK", [b""])
+        mock_imap_class.return_value = mock_conn
+
+        fetch_emails("fake@example.invalid", "fake-pass")
+
+        assert mock_conn.select.call_count == 2
+        assert mock_conn.select.call_args_list[1] == call("INBOX")
+
+    @patch("grade_data.parser.imaplib.IMAP4_SSL")
+    def test_fetch_finds_emails_in_all_mail(
+        self, mock_imap_class, sample_email_text
+    ) -> None:
+        """Test that emails in [Gmail]/All Mail are found and parsed."""
+        raw = (
+            "From: pwsupport@unionsd.org\r\n"
+            "Subject: Progress report for Layla H.\r\n"
+            "Content-Type: text/plain; charset=utf-8\r\n"
+            "\r\n" + sample_email_text
+        ).encode("utf-8")
+
+        mock_conn = MagicMock()
+        mock_conn.login.return_value = ("OK", [b"Logged in"])
+        mock_conn.select.return_value = ("OK", [b"1"])
+        mock_conn.search.return_value = ("OK", [b"1"])
+        mock_conn.fetch.return_value = (
+            "OK",
+            [(b"1 (RFC822 {%d})" % len(raw), raw)],
+        )
+        mock_imap_class.return_value = mock_conn
+
+        report = fetch_emails("fake@example.invalid", "fake-pass")
+
+        mock_conn.select.assert_called_once_with('"[Gmail]/All Mail"')
+        assert len(report.courses) == 1

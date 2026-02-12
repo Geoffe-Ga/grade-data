@@ -39,6 +39,7 @@ _NOT_YET_GRADED_RE = re.compile(
 
 _SENDER = "pwsupport@unionsd.org"
 _IMAP_HOST = "imap.gmail.com"
+_GMAIL_ALL_MAIL = '"[Gmail]/All Mail"'
 
 
 @dataclass
@@ -282,7 +283,13 @@ def fetch_emails(
 
     conn = imaplib.IMAP4_SSL(_IMAP_HOST)
     conn.login(gmail_address, gmail_password)
-    conn.select("INBOX")
+
+    try:
+        conn.select(_GMAIL_ALL_MAIL)
+        logger.info("Selected mailbox: %s", _GMAIL_ALL_MAIL)
+    except imaplib.IMAP4.error:
+        conn.select("INBOX")
+        logger.info("Selected mailbox: INBOX (All Mail unavailable)")
 
     search_criteria = f'(FROM "{_SENDER}" SINCE "{since_date}")'
     logger.debug("IMAP search: %s", search_criteria)
