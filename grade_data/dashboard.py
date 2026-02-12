@@ -178,6 +178,22 @@ _CSS = """\
             color: var(--badge-missing);
             margin-bottom: .5rem;
         }
+        .missing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .missing-close {
+            background: none;
+            border: none;
+            color: var(--badge-missing);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0 .25rem;
+            line-height: 1;
+            opacity: .7;
+        }
+        .missing-close:hover { opacity: 1; }
         #missing-panel ul { list-style: none; padding: 0; }
         #missing-panel li {
             padding: .25rem 0;
@@ -327,8 +343,13 @@ _JS = """\
                 });
             });
             const mp = document.getElementById('missing-panel');
-            if (missing.length) {
-                mp.innerHTML = '<h2>Missing Assignments</h2><ul>' +
+            if (missing.length &&
+                !sessionStorage.getItem('missing-dismissed')) {
+                mp.innerHTML =
+                    '<div class="missing-header">' +
+                    '<h2>Missing Assignments</h2>' +
+                    '<button class="missing-close" onclick="dismissMissing()"' +
+                    ' title="Dismiss">&times;</button></div><ul>' +
                     missing.map(m =>
                         `<li><strong>${m.course}</strong>: ${m.name} (${m.date})</li>`
                     ).join('') + '</ul>';
@@ -365,6 +386,10 @@ _JS = """\
                     `<th>Score</th><th>Status</th></tr>` +
                     rows + `</table></div></div>`;
             }).join('');
+        }
+        function dismissMissing() {
+            sessionStorage.setItem('missing-dismissed', '1');
+            document.getElementById('missing-panel').innerHTML = '';
         }
         function toggleCourse(i) {
             const body = document.querySelector(`#course-${i} .course-body`);
