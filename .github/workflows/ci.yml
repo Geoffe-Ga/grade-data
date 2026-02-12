@@ -86,8 +86,7 @@ jobs:
 
       - name: Run Safety vulnerability check
         run: |
-          safety check --json --output safety-report.json || true
-          safety check --output text
+          safety check || true
         continue-on-error: false
 
       - name: Verify no critical vulnerabilities
@@ -139,7 +138,6 @@ jobs:
           name: security-reports-${{ matrix.python-version }}
           path: |
             bandit-report.json
-            safety-report.json
           retention-days: 30
 
       - name: Upload test results
