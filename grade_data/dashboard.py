@@ -128,6 +128,7 @@ _CSS = """\
             justify-content: center;
             min-height: 100vh;
         }
+        #login-screen[hidden] { display: none; }
         .login-box {
             text-align: center;
             background: var(--surface);
@@ -283,7 +284,7 @@ _JS = """\
             const map = {A:'var(--grade-a)',B:'var(--grade-b)',
                          C:'var(--grade-c)',D:'var(--grade-d)',
                          F:'var(--grade-f)'};
-            return map[letter] || 'var(--text)';
+            return map[letter && letter[0]] || 'var(--text)';
         }
         function statusBadge(a) {
             const b = '<span class="badge badge-';
@@ -297,8 +298,21 @@ _JS = """\
                 return b+'not-graded">Not Graded</span>';
             return '';
         }
+        function formatDate(iso) {
+            const d = new Date(iso);
+            return d.toLocaleDateString('en-US', {
+                month: 'short', day: 'numeric', year: 'numeric',
+                hour: 'numeric', minute: '2-digit'
+            });
+        }
         function renderDashboard() {
             const d = GRADE_DATA;
+            // Format the updated date in the subtitle
+            const sub = document.querySelector('.subtitle');
+            if (sub && d.last_updated) {
+                sub.textContent = (d.grading_period || '') +
+                    ' \u00b7 Updated ' + formatDate(d.last_updated);
+            }
             if (!d.courses.length) {
                 document.getElementById('course-cards').innerHTML =
                     '<p style="text-align:center;color:var(--text-muted);' +
