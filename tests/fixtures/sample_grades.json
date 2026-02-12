@@ -1,0 +1,134 @@
+{
+  "student": "Layla H.",
+  "grading_period": "Q3",
+  "courses": [
+    {
+      "name": "Math 6",
+      "period": "P1(A)",
+      "instructor": "Motch, Michaela",
+      "overall_grade": "D",
+      "assignments": [
+        {
+          "date": "2026-01-12",
+          "name": "5.3.4 Lesson",
+          "letter_grade": "A",
+          "points_earned": 5.0,
+          "points_possible": 5.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-01-12",
+          "name": "5.3.4 RP",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-01-12",
+          "name": "Ch 5 Check #3",
+          "letter_grade": "D",
+          "points_earned": 6.0,
+          "points_possible": 9.0,
+          "percentage": 66.67,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-01-15",
+          "name": "Extra Credit: Bonus (Part 2)",
+          "letter_grade": "A",
+          "points_earned": 10.74,
+          "points_possible": 10.0,
+          "percentage": 107.4,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-01-18",
+          "name": "Quiz 4",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 9.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": true,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-01-20",
+          "name": "Participation Notes",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": true,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-01-21",
+          "name": "6.1.1 RP",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": true,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-01-22",
+          "name": "6.1.2 RP",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": true,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-01-25",
+          "name": "Ch. 5: Review (Part 2)",
+          "letter_grade": "B",
+          "points_earned": 8.0,
+          "points_possible": 10.0,
+          "percentage": 80.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-01-28",
+          "name": "Homework 7",
+          "letter_grade": "*",
+          "points_earned": 0.0,
+          "points_possible": 9.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": true
+        }
+      ]
+    }
+  ]
+}

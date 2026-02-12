@@ -1,0 +1,44 @@
+name: Update Grades
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch and parse emails
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python parse_emails.py
+
+      - name: Send Discord alerts
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DASHBOARD_URL: ${{ vars.DASHBOARD_URL }}
+        run: python alert.py
+
+      - name: Build dashboard
+        env:
+          DASHBOARD_PASSWORD_HASH: ${{ secrets.DASHBOARD_PASSWORD_HASH }}
+        run: python build_dashboard.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "Grade Bot"
+          git config user.email "bot@grades.local"
+          git add grades.json state.json docs/
+          git diff --staged --quiet || git commit -m "Update grades $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push

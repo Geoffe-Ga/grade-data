@@ -1,0 +1,24 @@
+PowerSchool SIS Union Elementary
+
+Grading period:  Q3
+Student       :  Layla H.
+Course        :  Math 6
+Period        :  P1(A)
+Instructor    :  Motch, Michaela
+
+Current overall grade**:  D
+
+    01/12/2026  5.3.4 Lesson                           Grade: A  (5/5 = 100%)
+    01/12/2026  5.3.4 RP                               Grade: A  (10/10 = 100%)
+    01/12/2026  Ch 5 Check #3                          Grade: D  (6/9 = 66.67%)
+    01/21/2026  6.1.1 RP                               Grade: F  (0/10 = 0%)
+    01/22/2026  6.1.2 RP                               Grade: F  (0/10 = 0%)
+    01/15/2026  Extra Credit: Bonus (Part 2)           Grade: A  (10.74/10 = 107.4%)
+    01/18/2026  ^Quiz 4                                Grade: F  (0/9 = 0%)
+    01/20/2026  *Participation Notes                   Grade: F  (0/10 = 0%)
+    01/25/2026  Ch. 5: Review (Part 2)                 Grade: B  (8/10 = 80%)
+    01/28/2026  Homework 7                             Grade: *   (-/9)
+
+^ - Score is exempt from final grade
+* - Assignment is not included in final grade
+** - This final grade may include assignments that are not yet published by the teachers.
