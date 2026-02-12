@@ -114,12 +114,17 @@ def build_missing_embed(
 
     if still_outstanding:
         count = len(still_outstanding)
-        lines.append(f"\n{count} other missing — [dashboard]({dashboard_url})")
+        lines.append(f"\n{count} other missing")
+
+    if dashboard_url:
+        lines.append(f"\n[View Dashboard]({dashboard_url})")
+
+    first_name = report.student.split()[0] if report.student else "Student"
 
     return {
         "embeds": [
             {
-                "title": f"New Missing Assignments for {report.student}",
+                "title": f"New Missing Assignments for {first_name}",
                 "description": "\n".join(lines),
                 "color": 0xFF0000,
             }
@@ -130,12 +135,14 @@ def build_missing_embed(
 def build_resolved_embed(
     student_name: str,
     resolved_keys: list[str],
+    dashboard_url: str = "",
 ) -> dict[str, Any]:
     """Build a Discord embed payload for resolved assignments.
 
     Args:
         student_name: Name of the student.
         resolved_keys: Keys of assignments that are no longer missing.
+        dashboard_url: URL to the grade dashboard.
 
     Returns:
         Discord webhook payload dict with embeds list.
@@ -145,10 +152,15 @@ def build_resolved_embed(
         course, name, date = _parse_key(key)
         lines.append(f"- {name} ({course}, {date})")
 
+    if dashboard_url:
+        lines.append(f"\n[View Dashboard]({dashboard_url})")
+
+    first_name = student_name.split()[0] if student_name else "Student"
+
     return {
         "embeds": [
             {
-                "title": f"Assignments Completed for {student_name}",
+                "title": f"Assignments Completed for {first_name}",
                 "description": "\n".join(lines),
                 "color": 0x00FF00,
             }
@@ -201,7 +213,9 @@ def send_alerts(
         _post_webhook(webhook_url, embed_payload)
 
     if resolved:
-        resolved_payload = build_resolved_embed(grade_report.student, resolved)
+        resolved_payload = build_resolved_embed(
+            grade_report.student, resolved, dashboard_url
+        )
         _post_webhook(webhook_url, resolved_payload)
 
     updated_alerted = [key for key in state.alerted_missing if key not in set(resolved)]

@@ -303,6 +303,67 @@ class TestBuildMissingEmbed:
         desc = embed["embeds"][0]["description"]
         assert "other missing" not in desc
 
+    def test_embed_includes_dashboard_link(self) -> None:
+        """Test that embed always includes dashboard link when URL provided."""
+        report = _make_report(
+            [
+                Course(
+                    name="Math 6",
+                    period="P1(A)",
+                    instructor="Motch, Michaela",
+                    overall_grade="D",
+                    assignments=[
+                        _make_assignment("6.1.1 RP", is_missing=True),
+                    ],
+                ),
+            ]
+        )
+        new_keys = ["Math 6::6.1.1 RP::2026-01-21"]
+        embed = build_missing_embed(report, new_keys, [], "http://dash")
+        desc = embed["embeds"][0]["description"]
+        assert "[View Dashboard](http://dash)" in desc
+
+    def test_embed_no_dashboard_link_when_url_empty(self) -> None:
+        """Test that embed omits dashboard link when URL is empty."""
+        report = _make_report(
+            [
+                Course(
+                    name="Math 6",
+                    period="P1(A)",
+                    instructor="Motch, Michaela",
+                    overall_grade="D",
+                    assignments=[
+                        _make_assignment("6.1.1 RP", is_missing=True),
+                    ],
+                ),
+            ]
+        )
+        new_keys = ["Math 6::6.1.1 RP::2026-01-21"]
+        embed = build_missing_embed(report, new_keys, [], "")
+        desc = embed["embeds"][0]["description"]
+        assert "View Dashboard" not in desc
+
+    def test_embed_uses_first_name_only(self) -> None:
+        """Test that embed title uses first name without last initial."""
+        report = _make_report(
+            [
+                Course(
+                    name="Math 6",
+                    period="P1(A)",
+                    instructor="Motch, Michaela",
+                    overall_grade="D",
+                    assignments=[
+                        _make_assignment("6.1.1 RP", is_missing=True),
+                    ],
+                ),
+            ]
+        )
+        new_keys = ["Math 6::6.1.1 RP::2026-01-21"]
+        embed = build_missing_embed(report, new_keys, [], "http://dash")
+        title = embed["embeds"][0]["title"]
+        assert "Layla" in title
+        assert "H." not in title
+
 
 class TestBuildResolvedEmbed:
     """Tests for the resolved/completed embed."""
