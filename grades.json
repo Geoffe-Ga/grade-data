@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-12T21:13:52.529206+00:00",
+  "last_updated": "2026-02-13T14:46:14.695674+00:00",
   "student": "Layla H.",
   "grading_period": "Q3",
   "courses": [
@@ -459,7 +459,7 @@
       "name": "Life Skills-Creative Com",
       "period": "P3(A)",
       "instructor": "Livingston, Eric",
-      "overall_grade": "A",
+      "overall_grade": "C+",
       "assignments": [
         {
           "date": "2026-01-12",
@@ -488,14 +488,14 @@
         {
           "date": "2026-01-14",
           "name": "numberwrks.11- (choose 1 each section) skill check",
-          "letter_grade": "*",
+          "letter_grade": "F",
           "points_earned": 0.0,
           "points_possible": 9.0,
           "percentage": 0.0,
-          "is_missing": false,
+          "is_missing": true,
           "is_exempt": false,
           "is_not_included": false,
-          "is_not_yet_graded": true
+          "is_not_yet_graded": false
         },
         {
           "date": "2026-01-14",
@@ -528,6 +528,18 @@
           "points_earned": 10.74,
           "points_possible": 10.0,
           "percentage": 107.4,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-11",
+          "name": "Numberworks #13",
+          "letter_grade": "C+",
+          "points_earned": 7.0,
+          "points_possible": 9.0,
+          "percentage": 77.78,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
