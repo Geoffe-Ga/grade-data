@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-24T14:55:55.490687+00:00",
+  "last_updated": "2026-02-25T14:54:57.923629+00:00",
   "student": "Layla H.",
   "grading_period": "Q3",
   "courses": [
@@ -7,7 +7,7 @@
       "name": "Science 6",
       "period": "P2(A)",
       "instructor": "Motch, Michaela",
-      "overall_grade": "C+",
+      "overall_grade": "B-",
       "assignments": [
         {
           "date": "2026-01-12",
@@ -24,11 +24,11 @@
         {
           "date": "2026-01-13",
           "name": "Body System Illness Notes",
-          "letter_grade": "F",
-          "points_earned": 0.0,
+          "letter_grade": "B-",
+          "points_earned": 8.0,
           "points_possible": 10.0,
-          "percentage": 0.0,
-          "is_missing": true,
+          "percentage": 80.0,
+          "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
           "is_not_yet_graded": false
@@ -108,11 +108,11 @@
         {
           "date": "2026-01-23",
           "name": "Asexual/Sexual Reproduction Notes",
-          "letter_grade": "F",
-          "points_earned": 0.0,
+          "letter_grade": "B-",
+          "points_earned": 8.0,
           "points_possible": 10.0,
-          "percentage": 0.0,
-          "is_missing": true,
+          "percentage": 80.0,
+          "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
           "is_not_yet_graded": false
@@ -154,12 +154,84 @@
           "is_not_yet_graded": false
         },
         {
+          "date": "2026-02-04",
+          "name": "Traits Survey",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-05",
+          "name": "Heredity Notes",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
           "date": "2026-02-05",
           "name": "Reproduction Quiz",
           "letter_grade": "A",
           "points_earned": 14.0,
           "points_possible": 15.0,
           "percentage": 93.33,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-09",
+          "name": "Amoeba Sisters: Monohybrid",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-10",
+          "name": "Punnett Square: Dogs",
+          "letter_grade": "D-",
+          "points_earned": 6.0,
+          "points_possible": 10.0,
+          "percentage": 60.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-10",
+          "name": "Punnett Square: Dragons",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-10",
+          "name": "Punnett Square: Show Your Work",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
@@ -607,7 +679,19 @@
         },
         {
           "date": "2026-02-09",
-          "name": "Ch 6 Study Guide",
+          "name": "Ch 7 Vocab",
+          "letter_grade": "D-",
+          "points_earned": 6.0,
+          "points_possible": 10.0,
+          "percentage": 60.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-10",
+          "name": "Ch 6 Test",
           "letter_grade": "*",
           "points_earned": 0.0,
           "points_possible": 10.0,
@@ -616,6 +700,54 @@
           "is_exempt": false,
           "is_not_included": false,
           "is_not_yet_graded": true
+        },
+        {
+          "date": "2026-02-10",
+          "name": "Formative: Rates/Ratios",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": true,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-11",
+          "name": "Rates WS",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-12",
+          "name": "7.1.1 Lesson",
+          "letter_grade": "A",
+          "points_earned": 5.0,
+          "points_possible": 5.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-12",
+          "name": "7.1.1 RP",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
         }
       ]
     },
@@ -867,6 +999,18 @@
           "letter_grade": "A",
           "points_earned": 20.0,
           "points_possible": 20.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-02-24",
+          "name": "week 6 - homework checkins",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
           "percentage": 100.0,
           "is_missing": false,
           "is_exempt": false,
