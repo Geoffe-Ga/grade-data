@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-28T16:08:54.849111+00:00",
+  "last_updated": "2026-04-29T15:57:06.327103+00:00",
   "student": "Layla H.",
   "grading_period": "Q4",
   "courses": [
@@ -720,6 +720,30 @@
           "points_earned": 3.0,
           "points_possible": 10.0,
           "percentage": 30.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-04-10",
+          "name": "Daily Language Review #8",
+          "letter_grade": "B",
+          "points_earned": 8.5,
+          "points_possible": 10.0,
+          "percentage": 85.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-04-12",
+          "name": "PowerUp 45 min. #4",
+          "letter_grade": "F",
+          "points_earned": 5.0,
+          "points_possible": 10.0,
+          "percentage": 50.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
