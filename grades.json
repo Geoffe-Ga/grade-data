@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-03T18:23:30.605723+00:00",
+  "last_updated": "2026-06-04T16:55:46.677760+00:00",
   "student": "Layla H.",
   "grading_period": "Q4",
   "courses": [
@@ -7,7 +7,7 @@
       "name": "Math 6",
       "period": "P1(A)",
       "instructor": "Motch, Michaela",
-      "overall_grade": "C-",
+      "overall_grade": "C",
       "assignments": [
         {
           "date": "2026-03-23",
@@ -526,6 +526,18 @@
           "is_not_yet_graded": false
         },
         {
+          "date": "2026-05-05",
+          "name": "Order of Operations WS",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
           "date": "2026-05-15",
           "name": "Math Game Board 1",
           "letter_grade": "A",
@@ -551,6 +563,18 @@
         },
         {
           "date": "2026-05-22",
+          "name": "Group Parody",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-05-22",
           "name": "Math Game Board 2",
           "letter_grade": "F",
           "points_earned": 13.5,
@@ -564,14 +588,14 @@
         {
           "date": "2026-05-29",
           "name": "Math Game Board 3",
-          "letter_grade": "*",
-          "points_earned": 0.0,
-          "points_possible": 20.0,
-          "percentage": 0.0,
+          "letter_grade": "B-",
+          "points_earned": 20.0,
+          "points_possible": 25.0,
+          "percentage": 80.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
-          "is_not_yet_graded": true
+          "is_not_yet_graded": false
         }
       ]
     },
@@ -647,7 +671,7 @@
       "name": "Science 6",
       "period": "P2(A)",
       "instructor": "Motch, Michaela",
-      "overall_grade": "C-",
+      "overall_grade": "C",
       "assignments": [
         {
           "date": "2026-03-23",
@@ -1058,6 +1082,18 @@
           "is_not_yet_graded": false
         },
         {
+          "date": "2026-05-19",
+          "name": "Water Cycle Project",
+          "letter_grade": "A",
+          "points_earned": 97.0,
+          "points_possible": 100.0,
+          "percentage": 97.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
           "date": "2026-05-20",
           "name": "Air Masses and Air Pressure",
           "letter_grade": "F",
@@ -1179,18 +1215,6 @@
         },
         {
           "date": "2026-05-29",
-          "name": "Weather Test",
-          "letter_grade": "*",
-          "points_earned": 0.0,
-          "points_possible": 10.0,
-          "percentage": 0.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": true
-        },
-        {
-          "date": "2026-05-29",
           "name": "Forms of Energy Check",
           "letter_grade": "F",
           "points_earned": 0.0,
@@ -1202,16 +1226,40 @@
           "is_not_yet_graded": false
         },
         {
+          "date": "2026-05-29",
+          "name": "Weather Test",
+          "letter_grade": "D",
+          "points_earned": 19.0,
+          "points_possible": 29.0,
+          "percentage": 65.52,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
           "date": "2026-06-02",
-          "name": "Rube Goldberg Project",
+          "name": "Rube Goldberg Group Project",
+          "letter_grade": "C",
+          "points_earned": 15.0,
+          "points_possible": 20.0,
+          "percentage": 75.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-06-03",
+          "name": "Table of Content",
           "letter_grade": "*",
           "points_earned": 0.0,
-          "points_possible": 20.0,
+          "points_possible": 0.0,
           "percentage": 0.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
-          "is_not_yet_graded": true
+          "is_not_yet_graded": false
         }
       ]
     },
@@ -1416,50 +1464,62 @@
         {
           "date": "2026-05-20",
           "name": "Argument Planning Pages",
-          "letter_grade": "*",
+          "letter_grade": "F",
           "points_earned": 0.0,
           "points_possible": 10.0,
           "percentage": 0.0,
-          "is_missing": false,
+          "is_missing": true,
           "is_exempt": false,
           "is_not_included": false,
-          "is_not_yet_graded": true
+          "is_not_yet_graded": false
         },
         {
           "date": "2026-05-22",
           "name": "Argument Essay Checklist",
-          "letter_grade": "*",
-          "points_earned": 0.0,
+          "letter_grade": "A",
+          "points_earned": 10.0,
           "points_possible": 10.0,
-          "percentage": 0.0,
+          "percentage": 100.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
-          "is_not_yet_graded": true
+          "is_not_yet_graded": false
         },
         {
           "date": "2026-05-25",
           "name": "Argument Essay",
-          "letter_grade": "*",
-          "points_earned": 0.0,
+          "letter_grade": "B-",
+          "points_earned": 33.0,
           "points_possible": 40.0,
-          "percentage": 0.0,
+          "percentage": 82.5,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
-          "is_not_yet_graded": true
+          "is_not_yet_graded": false
         },
         {
           "date": "2026-06-01",
           "name": "Advice Letter",
-          "letter_grade": "*",
-          "points_earned": 0.0,
+          "letter_grade": "A",
+          "points_earned": 20.0,
           "points_possible": 20.0,
-          "percentage": 0.0,
+          "percentage": 100.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
-          "is_not_yet_graded": true
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-06-02",
+          "name": "Food Truck/Best Book Q4",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
         }
       ]
     },
@@ -1739,7 +1799,7 @@
       "name": "Soc Sci 6",
       "period": "P6(A)",
       "instructor": "Mullaly, Megan",
-      "overall_grade": "D",
+      "overall_grade": "C-",
       "assignments": [
         {
           "date": "2026-03-23",
@@ -1952,6 +2012,18 @@
           "points_earned": 9.0,
           "points_possible": 10.0,
           "percentage": 90.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-06-02",
+          "name": "Greece/Rome Notes",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
