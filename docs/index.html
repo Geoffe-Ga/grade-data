@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade Tracker — </title>
+    <title>Grade Tracker — Layla H.</title>
     <style>
         :root {
             --bg: #1a1a2e;
@@ -183,9 +183,9 @@
     </div>
     <div id="dashboard" hidden>
         <header>
-            <h1>Grades for </h1>
-            <p class="subtitle">
-                &middot; Updated 2026-08-12T15:00:34.341086+00:00</p>
+            <h1>Grades for Layla H.</h1>
+            <p class="subtitle">Q1
+                &middot; Updated 2026-08-13T15:00:50.436154+00:00</p>
         </header>
         <div id="missing-panel"></div>
         <div id="course-cards"></div>
@@ -194,10 +194,31 @@
     <script>
         const PASSWORD_HASH = "beac631c9f939d77cec5e8ed6eca16198a47bef17c3af463d1dd2fb7e86b747e";
         const GRADE_DATA = {
-  "last_updated": "2026-08-12T15:00:34.341086+00:00",
-  "student": "",
-  "grading_period": "",
-  "courses": []
+  "last_updated": "2026-08-13T15:00:50.436154+00:00",
+  "student": "Layla H.",
+  "grading_period": "Q1",
+  "courses": [
+    {
+      "name": "PLTW-Design and Model",
+      "period": "P6(A)",
+      "instructor": "Brown, Tracy",
+      "overall_grade": "",
+      "assignments": [
+        {
+          "date": "2026-08-12",
+          "name": "Location Quiz",
+          "letter_grade": "*",
+          "points_earned": 0.0,
+          "points_possible": 1.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": true
+        }
+      ]
+    }
+  ]
 };
         // --- Password protection ---
         function checkPassword() {
