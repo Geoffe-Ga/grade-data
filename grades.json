@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-13T15:00:50.436154+00:00",
+  "last_updated": "2026-08-14T14:54:42.439303+00:00",
   "student": "Layla H.",
   "grading_period": "Q1",
   "courses": [
@@ -7,19 +7,19 @@
       "name": "PLTW-Design and Model",
       "period": "P6(A)",
       "instructor": "Brown, Tracy",
-      "overall_grade": "",
+      "overall_grade": "A",
       "assignments": [
         {
           "date": "2026-08-12",
           "name": "Location Quiz",
-          "letter_grade": "*",
-          "points_earned": 0.0,
+          "letter_grade": "A",
+          "points_earned": 1.0,
           "points_possible": 1.0,
-          "percentage": 0.0,
+          "percentage": 100.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
-          "is_not_yet_graded": true
+          "is_not_yet_graded": false
         }
       ]
     }
