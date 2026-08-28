@@ -1,6 +1,226 @@
 {
-  "last_updated": "2026-08-27T23:40:17.591820+00:00",
-  "student": "",
-  "grading_period": "",
-  "courses": []
+  "last_updated": "2026-08-28T23:28:56.538859+00:00",
+  "student": "Layla H.",
+  "grading_period": "Q1",
+  "courses": [
+    {
+      "name": "Science  7",
+      "period": "P2(A)",
+      "instructor": "Campbell, Chrissie",
+      "overall_grade": "A",
+      "assignments": [
+        {
+          "date": "2026-08-26",
+          "name": "7th Grade Syllabus",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-26",
+          "name": "Gab Lab Verification Google Form",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-26",
+          "name": "Title Page-Gab Lab Social Tasks",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        }
+      ]
+    },
+    {
+      "name": "Soc Sci 7",
+      "period": "P5(A)",
+      "instructor": "Sieto, Anna",
+      "overall_grade": "--",
+      "assignments": []
+    },
+    {
+      "name": "Math 7",
+      "period": "P3(A)",
+      "instructor": "Kim, Jamie",
+      "overall_grade": "A",
+      "assignments": [
+        {
+          "date": "2026-08-15",
+          "name": "All About Me",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-17",
+          "name": "Syllabus",
+          "letter_grade": "A",
+          "points_earned": 5.0,
+          "points_possible": 5.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-18",
+          "name": "1.1 Representations on the Number Line",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-19",
+          "name": "1.2 Adding Integers",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-20",
+          "name": "1.3 Subtracting Integers",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-21",
+          "name": "Adding and Subtracting Integers",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        }
+      ]
+    },
+    {
+      "name": "PLTW-Design and Model",
+      "period": "P6(A)",
+      "instructor": "Brown, Tracy",
+      "overall_grade": "A",
+      "assignments": [
+        {
+          "date": "2026-08-12",
+          "name": "Location Quiz",
+          "letter_grade": "A",
+          "points_earned": 1.0,
+          "points_possible": 1.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-17",
+          "name": "Robot Research",
+          "letter_grade": "A",
+          "points_earned": 2.0,
+          "points_possible": 2.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-20",
+          "name": "Parts Quiz",
+          "letter_grade": "A",
+          "points_earned": 2.0,
+          "points_possible": 2.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-24",
+          "name": "Name Quiz",
+          "letter_grade": "A",
+          "points_earned": 5.0,
+          "points_possible": 5.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        }
+      ]
+    },
+    {
+      "name": "Language Arts  7",
+      "period": "P1(A)",
+      "instructor": "Saidak, Heather",
+      "overall_grade": "",
+      "assignments": [
+        {
+          "date": "2026-08-19",
+          "name": "Writing Assessment - U1",
+          "letter_grade": "*",
+          "points_earned": 0.0,
+          "points_possible": 5.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": true
+        },
+        {
+          "date": "2026-08-26",
+          "name": "Diagramming Simple Subjects & Verbs",
+          "letter_grade": "*",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": true
+        }
+      ]
+    }
+  ]
 }
