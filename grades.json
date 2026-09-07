@@ -1,8 +1,52 @@
 {
-  "last_updated": "2026-09-04T17:28:38.329991+00:00",
+  "last_updated": "2026-09-07T18:38:46.572904+00:00",
   "student": "Layla H.",
   "grading_period": "Q1",
   "courses": [
+    {
+      "name": "Language Arts  7",
+      "period": "P1(A)",
+      "instructor": "Saidak, Heather",
+      "overall_grade": "F",
+      "assignments": [
+        {
+          "date": "2026-08-19",
+          "name": "Writing Assessment - U1",
+          "letter_grade": "*",
+          "points_earned": 0.0,
+          "points_possible": 5.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": true
+        },
+        {
+          "date": "2026-08-26",
+          "name": "Diagramming Simple Subjects & Verbs",
+          "letter_grade": "*",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": true
+        },
+        {
+          "date": "2026-08-28",
+          "name": "Verb Phrases",
+          "letter_grade": "F",
+          "points_earned": 1.0,
+          "points_possible": 10.0,
+          "percentage": 10.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        }
+      ]
+    },
     {
       "name": "Science  7",
       "period": "P2(A)",
@@ -144,6 +188,74 @@
           "points_earned": 10.0,
           "points_possible": 10.0,
           "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        }
+      ]
+    },
+    {
+      "name": "PLTW-Design and Model",
+      "period": "P6(A)",
+      "instructor": "Brown, Tracy",
+      "overall_grade": "A",
+      "assignments": [
+        {
+          "date": "2026-08-12",
+          "name": "Location Quiz",
+          "letter_grade": "A",
+          "points_earned": 1.0,
+          "points_possible": 1.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-17",
+          "name": "Robot Research",
+          "letter_grade": "A",
+          "points_earned": 2.0,
+          "points_possible": 2.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-20",
+          "name": "Parts Quiz",
+          "letter_grade": "A",
+          "points_earned": 2.0,
+          "points_possible": 2.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-24",
+          "name": "Name Quiz",
+          "letter_grade": "A",
+          "points_earned": 5.0,
+          "points_possible": 5.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-08-28",
+          "name": "Gear Quiz",
+          "letter_grade": "A-",
+          "points_earned": 9.0,
+          "points_possible": 10.0,
+          "percentage": 90.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
@@ -296,118 +408,6 @@
           "points_earned": 16.0,
           "points_possible": 20.0,
           "percentage": 80.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        }
-      ]
-    },
-    {
-      "name": "PLTW-Design and Model",
-      "period": "P6(A)",
-      "instructor": "Brown, Tracy",
-      "overall_grade": "A",
-      "assignments": [
-        {
-          "date": "2026-08-12",
-          "name": "Location Quiz",
-          "letter_grade": "A",
-          "points_earned": 1.0,
-          "points_possible": 1.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-08-17",
-          "name": "Robot Research",
-          "letter_grade": "A",
-          "points_earned": 2.0,
-          "points_possible": 2.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-08-20",
-          "name": "Parts Quiz",
-          "letter_grade": "A",
-          "points_earned": 2.0,
-          "points_possible": 2.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-08-24",
-          "name": "Name Quiz",
-          "letter_grade": "A",
-          "points_earned": 5.0,
-          "points_possible": 5.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-08-28",
-          "name": "Gear Quiz",
-          "letter_grade": "A-",
-          "points_earned": 9.0,
-          "points_possible": 10.0,
-          "percentage": 90.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        }
-      ]
-    },
-    {
-      "name": "Language Arts  7",
-      "period": "P1(A)",
-      "instructor": "Saidak, Heather",
-      "overall_grade": "F",
-      "assignments": [
-        {
-          "date": "2026-08-19",
-          "name": "Writing Assessment - U1",
-          "letter_grade": "*",
-          "points_earned": 0.0,
-          "points_possible": 5.0,
-          "percentage": 0.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": true
-        },
-        {
-          "date": "2026-08-26",
-          "name": "Diagramming Simple Subjects & Verbs",
-          "letter_grade": "*",
-          "points_earned": 0.0,
-          "points_possible": 10.0,
-          "percentage": 0.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": true
-        },
-        {
-          "date": "2026-08-28",
-          "name": "Verb Phrases",
-          "letter_grade": "F",
-          "points_earned": 1.0,
-          "points_possible": 10.0,
-          "percentage": 10.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
