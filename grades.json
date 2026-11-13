@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-12T21:22:35.660287+00:00",
+  "last_updated": "2026-11-13T20:48:12.896652+00:00",
   "student": "Layla H.",
   "grading_period": "Q2",
   "courses": [
@@ -63,7 +63,7 @@
       "name": "Language Arts  7",
       "period": "P1(A)",
       "instructor": "Saidak, Heather",
-      "overall_grade": "A-",
+      "overall_grade": "C+",
       "assignments": [
         {
           "date": "2026-10-20",
@@ -184,6 +184,30 @@
           "is_exempt": false,
           "is_not_included": false,
           "is_not_yet_graded": true
+        },
+        {
+          "date": "2026-11-05",
+          "name": "Parts of Speech: Nouns - Ab. & Con.",
+          "letter_grade": "*",
+          "points_earned": 0.0,
+          "points_possible": 13.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": true
+        },
+        {
+          "date": "2026-11-05",
+          "name": "Combining S. Sent. into Comp. Sent.",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 13.0,
+          "percentage": 0.0,
+          "is_missing": true,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
         },
         {
           "date": "2026-11-06",
@@ -584,6 +608,18 @@
         {
           "date": "2026-11-05",
           "name": "L2: Vikings",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-06",
+          "name": "L3: Christendom",
           "letter_grade": "A",
           "points_earned": 10.0,
           "points_possible": 10.0,
