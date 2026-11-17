@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-16T23:15:53.127951+00:00",
+  "last_updated": "2026-11-17T22:06:21.982864+00:00",
   "student": "Layla H.",
   "grading_period": "Q2",
   "courses": [
@@ -52,6 +52,18 @@
           "points_earned": 51.0,
           "points_possible": 60.0,
           "percentage": 85.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-13",
+          "name": "Notebook Check #1",
+          "letter_grade": "A",
+          "points_earned": 100.0,
+          "points_possible": 100.0,
+          "percentage": 100.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
@@ -239,7 +251,7 @@
       "name": "Math 7",
       "period": "P3(A)",
       "instructor": "Kim, Jamie",
-      "overall_grade": "A-",
+      "overall_grade": "B-",
       "assignments": [
         {
           "date": "2026-10-19",
@@ -362,12 +374,72 @@
           "is_not_yet_graded": false
         },
         {
+          "date": "2026-11-02",
+          "name": "Representing Proportional Relationships",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": true,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-03",
+          "name": "Non-Proportional Relationships",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": true,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
           "date": "2026-11-05",
           "name": "Unit 4 Quiz - Proportional Relationships",
           "letter_grade": "A",
           "points_earned": 30.0,
           "points_possible": 30.0,
           "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-09",
+          "name": "Fractional Unit Rates",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": true,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-12",
+          "name": "Unit 4 Review Packet",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": true,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-12",
+          "name": "Unit 4 Test - Proportional Relationships",
+          "letter_grade": "B",
+          "points_earned": 86.0,
+          "points_possible": 100.0,
+          "percentage": 86.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
@@ -488,6 +560,30 @@
           "is_exempt": false,
           "is_not_included": false,
           "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-18",
+          "name": "Plate Tectonics Notes NB 22",
+          "letter_grade": "*",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": true
+        },
+        {
+          "date": "2026-11-18",
+          "name": "Tectonic Plate Boundaries Graphic Org. NB 21",
+          "letter_grade": "*",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": true
         }
       ]
     },
@@ -628,6 +724,54 @@
           "is_exempt": false,
           "is_not_included": false,
           "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-09",
+          "name": "L4: Kings and Popes",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-10",
+          "name": "L5: The Crusades",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-12",
+          "name": "L6: Political and Social Change",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-13",
+          "name": "Europe Vocabulary",
+          "letter_grade": "*",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": true
         }
       ]
     },
