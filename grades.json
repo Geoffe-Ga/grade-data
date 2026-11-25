@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T23:25:59.838279+00:00",
+  "last_updated": "2026-11-25T22:59:06.002112+00:00",
   "student": "Layla H.",
   "grading_period": "Q2",
   "courses": [
@@ -200,190 +200,6 @@
           "is_exempt": false,
           "is_not_included": false,
           "is_not_yet_graded": true
-        }
-      ]
-    },
-    {
-      "name": "Science  7",
-      "period": "P2(A)",
-      "instructor": "Campbell, Chrissie",
-      "overall_grade": "A",
-      "assignments": [
-        {
-          "date": "2026-10-21",
-          "name": "BrainPOP Rock Cycle Quiz Graded",
-          "letter_grade": "A",
-          "points_earned": 9.0,
-          "points_possible": 9.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-10-21",
-          "name": "Rock Cycle Notes NB 15",
-          "letter_grade": "A",
-          "points_earned": 10.0,
-          "points_possible": 10.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-10-21",
-          "name": "Starburst Lab Rock Cycle Diagram NB 16",
-          "letter_grade": "A",
-          "points_earned": 10.0,
-          "points_possible": 10.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-10-22",
-          "name": "Quiz: The Rock Cycle & WED",
-          "letter_grade": "A-",
-          "points_earned": 18.0,
-          "points_possible": 20.0,
-          "percentage": 90.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-10-28",
-          "name": "Exit Ticket: Rock Cycle Top 5/Watermelon Idea",
-          "letter_grade": "A",
-          "points_earned": 10.0,
-          "points_possible": 10.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-10-28",
-          "name": "Rock Cycle CER Stations NB 18",
-          "letter_grade": "A",
-          "points_earned": 10.0,
-          "points_possible": 10.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-11-03",
-          "name": "Fossil Identification Mystery NB 19",
-          "letter_grade": "A",
-          "points_earned": 10.0,
-          "points_possible": 10.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-11-10",
-          "name": "Inside Earth Notes NB 20",
-          "letter_grade": "A",
-          "points_earned": 10.0,
-          "points_possible": 10.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-11-10",
-          "name": "Quiz: Inside Earth Review It",
-          "letter_grade": "A-",
-          "points_earned": 9.0,
-          "points_possible": 10.0,
-          "percentage": 90.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-11-18",
-          "name": "Plate Tectonics Notes NB 22",
-          "letter_grade": "A",
-          "points_earned": 10.0,
-          "points_possible": 10.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-11-18",
-          "name": "Tectonic Plate Boundaries Graphic Org. NB 21",
-          "letter_grade": "A",
-          "points_earned": 10.0,
-          "points_possible": 10.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        }
-      ]
-    },
-    {
-      "name": "PE 7/8",
-      "period": "P4(A)",
-      "instructor": "Burk, Christopher",
-      "overall_grade": "A",
-      "assignments": [
-        {
-          "date": "2026-10-23",
-          "name": "Week of 10/23",
-          "letter_grade": "A",
-          "points_earned": 60.0,
-          "points_possible": 60.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-10-30",
-          "name": "Week of 10/30",
-          "letter_grade": "A",
-          "points_earned": 60.0,
-          "points_possible": 60.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-11-11",
-          "name": "Week of 11/6",
-          "letter_grade": "A",
-          "points_earned": 60.0,
-          "points_possible": 60.0,
-          "percentage": 100.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
         }
       ]
     },
@@ -660,14 +476,14 @@
       ]
     },
     {
-      "name": "PLTW-Design and Model",
-      "period": "P6(A)",
-      "instructor": "Brown, Tracy",
-      "overall_grade": "B+",
+      "name": "Science  7",
+      "period": "P2(A)",
+      "instructor": "Campbell, Chrissie",
+      "overall_grade": "A",
       "assignments": [
         {
-          "date": "2026-10-23",
-          "name": "Cardboard Techniques",
+          "date": "2026-10-21",
+          "name": "BrainPOP Rock Cycle Quiz Graded",
           "letter_grade": "A",
           "points_earned": 9.0,
           "points_possible": 9.0,
@@ -678,11 +494,11 @@
           "is_not_yet_graded": false
         },
         {
-          "date": "2026-10-28",
-          "name": "Cardboard Scene Project",
+          "date": "2026-10-21",
+          "name": "Rock Cycle Notes NB 15",
           "letter_grade": "A",
-          "points_earned": 15.0,
-          "points_possible": 15.0,
+          "points_earned": 10.0,
+          "points_possible": 10.0,
           "percentage": 100.0,
           "is_missing": false,
           "is_exempt": false,
@@ -690,8 +506,56 @@
           "is_not_yet_graded": false
         },
         {
-          "date": "2026-11-10",
-          "name": "AFO Form",
+          "date": "2026-10-21",
+          "name": "Starburst Lab Rock Cycle Diagram NB 16",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-10-22",
+          "name": "Quiz: The Rock Cycle & WED",
+          "letter_grade": "A-",
+          "points_earned": 18.0,
+          "points_possible": 20.0,
+          "percentage": 90.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-10-28",
+          "name": "Exit Ticket: Rock Cycle Top 5/Watermelon Idea",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-10-28",
+          "name": "Rock Cycle CER Stations NB 18",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-03",
+          "name": "Fossil Identification Mystery NB 19",
           "letter_grade": "A",
           "points_earned": 10.0,
           "points_possible": 10.0,
@@ -703,22 +567,10 @@
         },
         {
           "date": "2026-11-10",
-          "name": "AFO Project & Presentation",
-          "letter_grade": "B",
-          "points_earned": 51.0,
-          "points_possible": 60.0,
-          "percentage": 85.0,
-          "is_missing": false,
-          "is_exempt": false,
-          "is_not_included": false,
-          "is_not_yet_graded": false
-        },
-        {
-          "date": "2026-11-13",
-          "name": "Notebook Check #1",
+          "name": "Inside Earth Notes NB 20",
           "letter_grade": "A",
-          "points_earned": 100.0,
-          "points_possible": 100.0,
+          "points_earned": 10.0,
+          "points_possible": 10.0,
           "percentage": 100.0,
           "is_missing": false,
           "is_exempt": false,
@@ -726,25 +578,37 @@
           "is_not_yet_graded": false
         },
         {
-          "date": "2026-11-19",
-          "name": "Multiview Sketches",
-          "letter_grade": "D-",
-          "points_earned": 12.5,
-          "points_possible": 20.0,
-          "percentage": 62.5,
+          "date": "2026-11-10",
+          "name": "Quiz: Inside Earth Review It",
+          "letter_grade": "A-",
+          "points_earned": 9.0,
+          "points_possible": 10.0,
+          "percentage": 90.0,
           "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
           "is_not_yet_graded": false
         },
         {
-          "date": "2026-11-20",
-          "name": "TinkerCAD Tutorials",
-          "letter_grade": "F",
-          "points_earned": 0.0,
+          "date": "2026-11-18",
+          "name": "Plate Tectonics Notes NB 22",
+          "letter_grade": "A",
+          "points_earned": 10.0,
           "points_possible": 10.0,
-          "percentage": 0.0,
-          "is_missing": true,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-18",
+          "name": "Tectonic Plate Boundaries Graphic Org. NB 21",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
           "is_exempt": false,
           "is_not_included": false,
           "is_not_yet_graded": false
@@ -981,6 +845,142 @@
           "points_possible": 8.0,
           "percentage": 100.0,
           "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        }
+      ]
+    },
+    {
+      "name": "PE 7/8",
+      "period": "P4(A)",
+      "instructor": "Burk, Christopher",
+      "overall_grade": "A",
+      "assignments": [
+        {
+          "date": "2026-10-23",
+          "name": "Week of 10/23",
+          "letter_grade": "A",
+          "points_earned": 60.0,
+          "points_possible": 60.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-10-30",
+          "name": "Week of 10/30",
+          "letter_grade": "A",
+          "points_earned": 60.0,
+          "points_possible": 60.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-11",
+          "name": "Week of 11/6",
+          "letter_grade": "A",
+          "points_earned": 60.0,
+          "points_possible": 60.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        }
+      ]
+    },
+    {
+      "name": "PLTW-Design and Model",
+      "period": "P6(A)",
+      "instructor": "Brown, Tracy",
+      "overall_grade": "B+",
+      "assignments": [
+        {
+          "date": "2026-10-23",
+          "name": "Cardboard Techniques",
+          "letter_grade": "A",
+          "points_earned": 9.0,
+          "points_possible": 9.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-10-28",
+          "name": "Cardboard Scene Project",
+          "letter_grade": "A",
+          "points_earned": 15.0,
+          "points_possible": 15.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-10",
+          "name": "AFO Form",
+          "letter_grade": "A",
+          "points_earned": 10.0,
+          "points_possible": 10.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-10",
+          "name": "AFO Project & Presentation",
+          "letter_grade": "B",
+          "points_earned": 51.0,
+          "points_possible": 60.0,
+          "percentage": 85.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-13",
+          "name": "Notebook Check #1",
+          "letter_grade": "A",
+          "points_earned": 100.0,
+          "points_possible": 100.0,
+          "percentage": 100.0,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-19",
+          "name": "Multiview Sketches",
+          "letter_grade": "D-",
+          "points_earned": 12.5,
+          "points_possible": 20.0,
+          "percentage": 62.5,
+          "is_missing": false,
+          "is_exempt": false,
+          "is_not_included": false,
+          "is_not_yet_graded": false
+        },
+        {
+          "date": "2026-11-20",
+          "name": "TinkerCAD Tutorials",
+          "letter_grade": "F",
+          "points_earned": 0.0,
+          "points_possible": 10.0,
+          "percentage": 0.0,
+          "is_missing": true,
           "is_exempt": false,
           "is_not_included": false,
           "is_not_yet_graded": false
